@@ -12,7 +12,7 @@ RUN mkdir -p /home/upsource \
 	&& wget -nv http://download.jetbrains.com/upsource/upsource-$UPSOURCE_VERSION.zip \
 	&& unzip upsource-$UPSOURCE_VERSION.zip \
 	&& rm -rf upsource-$UPSOURCE_VERSION.zip \
-	&& chown -R upsource:upsource Upsource
+	&& chown -R upsource:upsource Upsource \
 	&& chmod -R +arwx /opt/Upsource/*
 USER upsource
 EXPOSE 8080

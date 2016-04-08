@@ -5,16 +5,16 @@ MAINTAINER Eugene Volchek <evolchek@klika-tech.com>
 ENV UPSOURCE_VERSION 2.5.4995
 VOLUME ["/opt/Upsource/conf", "/opt/Upsource/data", "/opt/Upsource/logs", "/opt/Upsource/backups"]
 WORKDIR /opt
-RUN mkdir -p /home/upsource \
-	&& groupadd -g 999 upsource \
-	&& useradd -u 999 -g upsource -d /home/upsource upsource \
-	&& chown -R upsource:upsource /home/upsource \
+RUN mkdir -p /home/1001 \
+	&& groupadd -g 999 1001 \
+	&& useradd -u 999 -g 1001 -d /home/1001 1001 \
+	&& chown -R 1001:1001 /home/1001 \
 	&& wget -nv http://download.jetbrains.com/upsource/upsource-$UPSOURCE_VERSION.zip \
-	&& unzip upsource-$UPSOURCE_VERSION.zip \
-	&& rm -rf upsource-$UPSOURCE_VERSION.zip \
-	&& chown -R upsource:upsource Upsource \
+	&& unzip 1001-$UPSOURCE_VERSION.zip \
+	&& rm -rf 1001-$UPSOURCE_VERSION.zip \
+	&& chown -R 1001:1001 Upsource \
 	&& chmod -R a+rwx /opt/Upsource
-USER upsource
+USER 1001
 EXPOSE 8080
 WORKDIR /opt/Upsource
 CMD ["bin/upsource.sh", "run"]

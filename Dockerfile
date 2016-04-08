@@ -13,7 +13,8 @@ RUN mkdir -p /home/1001 \
 	&& unzip upsource-$UPSOURCE_VERSION.zip \
 	&& rm -rf upsource-$UPSOURCE_VERSION.zip \
 	&& chown -R 1001:1001 Upsource \
-	&& chmod -R a+rwx /opt/Upsource
+	&& chmod -R 777 /opt/Upsource/* \
+	&& chmod -R 777 /opt/Upsource/conf
 USER 1001
 EXPOSE 8080
 WORKDIR /opt/Upsource

@@ -7,6 +7,7 @@ VOLUME /opt/Upsource/conf
 VOLUME /opt/Upsource/data
 VOLUME /opt/Upsource/logs
 VOLUME /opt/Upsource/backups
+VOLUME /opt/Upsource/temp
 WORKDIR /opt
 RUN mkdir -p /home/1001 \
 	&& groupadd -g 1001 1001 \

@@ -10,8 +10,8 @@ RUN mkdir -p /home/1001 \
 	&& useradd -u 999 -g 1001 -d /home/1001 1001 \
 	&& chown -R 1001:1001 /home/1001 \
 	&& wget -nv http://download.jetbrains.com/upsource/upsource-$UPSOURCE_VERSION.zip \
-	&& unzip 1001-$UPSOURCE_VERSION.zip \
-	&& rm -rf 1001-$UPSOURCE_VERSION.zip \
+	&& unzip upsource-$UPSOURCE_VERSION.zip \
+	&& rm -rf upsource-$UPSOURCE_VERSION.zip \
 	&& chown -R 1001:1001 Upsource \
 	&& chmod -R a+rwx /opt/Upsource
 USER 1001
